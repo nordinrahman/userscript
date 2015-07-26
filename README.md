@@ -1,5 +1,7 @@
 # userscript
-Collection of greasemonkey/tampermonkey script
+Collection of my authored greasemonkey/tampermonkey scripts hosted on
+* GreaseFork - https://greasyfork.org/en/users/13660-nordinrahman
+* OpenUserJS - https://openuserjs.org/users/nordinrahman/scripts
 
 ## primewire-enhancer.user.js
 
@@ -12,3 +14,8 @@ TODO:
 * Remove AdBlock message not blocked by Adblock and Anti Adblock Killer
 * Unframe browser link
 * Remove Sponsor link
+ 
+Install:
+* GreaseFork - https://greasyfork.org/en/scripts/11235-primewire-enhancer
+* OpenUserJS - https://openuserjs.org/scripts/nordinrahman/Primewire_Enhancer
+ 
