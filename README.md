@@ -9,13 +9,12 @@ Enhance browsing experience on primewire.ag, unframe link, and disable ad when c
 
 Script feature:
 * **Disable** FastPop feature
-* Unframe video by replacing video URL with direct URL
+* **Unframe** video by replacing video URL with direct URL
+* **Remove sponsor link** row
 
 TODO:
 * Remove AdBlock message not blocked by Adblock and Anti Adblock Killer
-* Remove Sponsor link
  
 Install:
 * GreaseFork - https://greasyfork.org/en/scripts/11235-primewire-enhancer
 * OpenUserJS - https://openuserjs.org/scripts/nordinrahman/Primewire_Enhancer
- 
