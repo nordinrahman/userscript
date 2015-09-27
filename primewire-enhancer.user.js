@@ -75,7 +75,7 @@
 
         var versionHostSpan = document.querySelectorAll('.version_host');
         for (var i = 0; i < versionHostSpan.length; i++) {
-            if (versionHostSpan[i].textContent.match(/;Sponsor Host/)) {
+            if (versionHostSpan[i].textContent.match(/;\w+ Host/)) {
                 var el = versionHostSpan[i].parentElement;
                 while (el && el.nodeName !== 'TABLE') el = el.parentElement;
                 if (el) el.style.display = 'none';
