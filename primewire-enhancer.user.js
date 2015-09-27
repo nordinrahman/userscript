@@ -95,4 +95,14 @@
         sponsorLinkHeading.style.display = 'none';
     })();
 
+    (function () {
+        /// <summary>
+        /// Remove hoax download link div
+        /// </summary>
+
+        var hoaxDownloadLinkDiv = document.querySelector('.download_link');
+
+        hoaxDownloadLinkDiv.style.display = 'none';
+    })();
+
 })();
