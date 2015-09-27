@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Primewire Enhancer
 // @namespace    https://github.com/nordinrahman/userscript
-// @version      0.2
+// @version      0.3
 // @description  Enhance browsing experience on primewire.ag, unframe link, and disable ad when clicking link. Used best together with Adblock Plus, Anti Adblock Killer (AdBlock filter & greasemonkey/tampermonkey userscript).
 // @author       Nordin Rahman
 // @match        http://www.primewire.ag/*
