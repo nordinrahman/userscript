@@ -118,4 +118,23 @@
             }
         }
     })();
+
+    (function () {
+        /// <summary>
+        /// Remove Primawire Trivia section
+        /// </summary>
+
+        var h2s = document.querySelectorAll('h2');
+        for (var i = 0; i < h2s.length; i++) {
+            if (h2s[i].textContent.match(/Primewire Trivia/)) {
+                var el = h2s[i];
+                el.style.display = 'none';
+
+                // hide all subsequent element until it meets another h2 element
+                while ((el = el.nextElementSibling) && el.tagName !== 'H2') {
+                    el.style.display = 'none';
+                }
+            }
+        }
+    })();
 })();
