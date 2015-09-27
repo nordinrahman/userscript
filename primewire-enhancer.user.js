@@ -28,14 +28,14 @@
                 try {
                     unsafeWindow.localStorage.setItem('InfNumFastPopsExpire', varInfNumFastPopsExpire)
                     unsafeWindow.localStorage.setItem('InfNumFastPops', varInfNumFastPops)
-                    console.log('DONE');
+                    console.log('DONE disabling FastPop feature');
                 } catch (ex) {
-                    console.log('ERROR');
+                    console.log('ERROR disabling FastPop feature');
                     console.log(ex);
                 }
             }, loadTimeout);
         });
-    });
+    })();
 
     (function () {
         /// <summary>
