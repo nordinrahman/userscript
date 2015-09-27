@@ -83,4 +83,16 @@
         }
     })();
 
+    (function () {
+        /// <summary>
+        /// Remove sponsor link section
+        /// </summary>
+
+        var sponsorLinkIframe = document.querySelector('iframe[src="/additional_content.php"]');
+        var sponsorLinkHeading = sponsorLinkIframe.previousElementSibling;
+
+        sponsorLinkIframe.style.display = 'none';
+        sponsorLinkHeading.style.display = 'none';
+    })();
+
 })();
