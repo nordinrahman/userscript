@@ -105,4 +105,17 @@
         hoaxDownloadLinkDiv.style.display = 'none';
     })();
 
+    (function () {
+        /// <summary>
+        /// Remove Message to follow on FaceBook
+        /// </summary>
+
+        var infoMessageDivs = document.querySelectorAll('.info_message');
+        for (var i = 0; i < infoMessageDivs.length; i++) {
+            if (infoMessageDivs[i].textContent.match(/Follow us on Facebook/)) {
+                var el = infoMessageDivs[i];
+                el.style.display = 'none';
+            }
+        }
+    })();
 })();
