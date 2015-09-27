@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Primewire Enhancer
 // @namespace    https://github.com/nordinrahman/userscript
-// @version      0.2
+// @version      0.3
 // @description  Enhance browsing experience on primewire.ag, unframe link, and disable ad when clicking link. Used best together with Adblock Plus, Anti Adblock Killer (AdBlock filter & greasemonkey/tampermonkey userscript).
 // @author       Nordin Rahman
 // @match        http://www.primewire.ag/*
@@ -28,14 +28,14 @@
                 try {
                     unsafeWindow.localStorage.setItem('InfNumFastPopsExpire', varInfNumFastPopsExpire)
                     unsafeWindow.localStorage.setItem('InfNumFastPops', varInfNumFastPops)
-                    console.log('DONE');
+                    console.log('DONE disabling FastPop feature');
                 } catch (ex) {
-                    console.log('ERROR');
+                    console.log('ERROR disabling FastPop feature');
                     console.log(ex);
                 }
             }, loadTimeout);
         });
-    });
+    })();
 
     (function () {
         /// <summary>
@@ -75,7 +75,7 @@
 
         var versionHostSpan = document.querySelectorAll('.version_host');
         for (var i = 0; i < versionHostSpan.length; i++) {
-            if (versionHostSpan[i].textContent.match(/;Sponsor Host/)) {
+            if (versionHostSpan[i].textContent.match(/;\w+ Host/)) {
                 var el = versionHostSpan[i].parentElement;
                 while (el && el.nodeName !== 'TABLE') el = el.parentElement;
                 if (el) el.style.display = 'none';
@@ -83,4 +83,58 @@
         }
     })();
 
+    (function () {
+        /// <summary>
+        /// Remove sponsor link section
+        /// </summary>
+
+        var sponsorLinkIframe = document.querySelector('iframe[src="/additional_content.php"]');
+        var sponsorLinkHeading = sponsorLinkIframe.previousElementSibling;
+
+        sponsorLinkIframe.style.display = 'none';
+        sponsorLinkHeading.style.display = 'none';
+    })();
+
+    (function () {
+        /// <summary>
+        /// Remove hoax download link div
+        /// </summary>
+
+        var hoaxDownloadLinkDiv = document.querySelector('.download_link');
+
+        hoaxDownloadLinkDiv.style.display = 'none';
+    })();
+
+    (function () {
+        /// <summary>
+        /// Remove Message to follow on FaceBook
+        /// </summary>
+
+        var infoMessageDivs = document.querySelectorAll('.info_message');
+        for (var i = 0; i < infoMessageDivs.length; i++) {
+            if (infoMessageDivs[i].textContent.match(/Follow us on Facebook/)) {
+                var el = infoMessageDivs[i];
+                el.style.display = 'none';
+            }
+        }
+    })();
+
+    (function () {
+        /// <summary>
+        /// Remove Primawire Trivia section
+        /// </summary>
+
+        var h2s = document.querySelectorAll('h2');
+        for (var i = 0; i < h2s.length; i++) {
+            if (h2s[i].textContent.match(/Primewire Trivia/)) {
+                var el = h2s[i];
+                el.style.display = 'none';
+
+                // hide all subsequent element until it meets another h2 element
+                while ((el = el.nextElementSibling) && el.tagName !== 'H2') {
+                    el.style.display = 'none';
+                }
+            }
+        }
+    })();
 })();
