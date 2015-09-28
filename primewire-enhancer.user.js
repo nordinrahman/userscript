@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         Primewire Enhancer
 // @namespace    https://github.com/nordinrahman/userscript
-// @version      0.3
+// @version      0.4
 // @description  Enhance browsing experience on primewire.ag, unframe link, and disable ad when clicking link. Used best together with Adblock Plus, Anti Adblock Killer (AdBlock filter & greasemonkey/tampermonkey userscript).
 // @author       Nordin Rahman
 // @match        http://www.primewire.ag/*
+// @match        http://www.primewire.org/*
+// @match        http://www.primewire.is/*
 // @grant        unsafeWindow
 // @noframes
 // ==/UserScript==
@@ -89,10 +91,12 @@
         /// </summary>
 
         var sponsorLinkIframe = document.querySelector('iframe[src="/additional_content.php"]');
-        var sponsorLinkHeading = sponsorLinkIframe.previousElementSibling;
+        var sponsorLinkHeading = sponsorLinkIframe && sponsorLinkIframe.previousElementSibling;
 
-        sponsorLinkIframe.style.display = 'none';
-        sponsorLinkHeading.style.display = 'none';
+        if (sponsorLinkIframe && sponsorLinkHeading) {
+            sponsorLinkIframe.style.display = 'none';
+            sponsorLinkHeading.style.display = 'none';
+        }
     })();
 
     (function () {
@@ -102,7 +106,9 @@
 
         var hoaxDownloadLinkDiv = document.querySelector('.download_link');
 
-        hoaxDownloadLinkDiv.style.display = 'none';
+        if (hoaxDownloadLinkDiv) {
+            hoaxDownloadLinkDiv.style.display = 'none';
+        }
     })();
 
     (function () {
