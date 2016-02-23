@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Primewire Enhancer
 // @namespace    https://github.com/nordinrahman/userscript
-// @version      0.4
+// @version      0.4.1
 // @description  Enhance browsing experience on primewire.ag, unframe link, and disable ad when clicking link. Used best together with Adblock Plus, Anti Adblock Killer (AdBlock filter & greasemonkey/tampermonkey userscript).
 // @author       Nordin Rahman
 // @match        http://www.primewire.ag/*
@@ -25,18 +25,24 @@
         var varInfNumFastPopsExpire = 'undefined__' + nextYearTime.toString();
         var varInfNumFastPops = 'undefined__999';
 
-        unsafeWindow.addEventListener('load', function () {
-            setTimeout(function () {
-                try {
-                    unsafeWindow.localStorage.setItem('InfNumFastPopsExpire', varInfNumFastPopsExpire)
-                    unsafeWindow.localStorage.setItem('InfNumFastPops', varInfNumFastPops)
-                    console.log('DONE disabling FastPop feature');
-                } catch (ex) {
-                    console.log('ERROR disabling FastPop feature');
-                    console.log(ex);
-                }
-            }, loadTimeout);
-        });
+        var setFastPop = function () {
+            try {
+                unsafeWindow.localStorage.setItem('InfNumFastPopsExpire', varInfNumFastPopsExpire)
+                unsafeWindow.localStorage.setItem('InfNumFastPops', varInfNumFastPops)
+                console.log('DONE disabling FastPop feature');
+            } catch (ex) {
+                console.log('ERROR disabling FastPop feature');
+                console.log(ex);
+            }
+        };
+
+        if (unsafeWindow.document.readyState !== "loading") {
+            setFastPop();
+        } else {
+            unsafeWindow.document.addEventListener('DOMContentLoaded', function () {
+                unsafeWindow.setTimeout(setFastPop, loadTimeout);
+            });
+        }
     })();
 
     (function () {
