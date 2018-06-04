@@ -4,6 +4,8 @@
 // @version      0.1
 // @description  Add link to fuget.org from nuget.org page
 // @author       Nordin Rahman
+// @copyright    2018, Nordin Rahman
+// @license      MIT; https://opensource.org/licenses/MIT
 // supportURL    https://github.com/nordinrahman/userscript/issues
 // @match        https://www.nuget.org/packages/*
 // @grant        none
