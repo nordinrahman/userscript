@@ -5,6 +5,8 @@ Collection of my authored greasemonkey/tampermonkey scripts hosted on
 
 ## primewire-enhancer.user.js
 
+**This script is no longer supported as of now**
+
 Enhance browsing experience on primewire.ag, unframe link, and disable ad when clicking link. Used best together with Adblock Plus, Anti Adblock Killer (AdBlock filter & greasemonkey/tampermonkey userscript).
 
 Script feature:
@@ -18,3 +20,16 @@ TODO:
 Install:
 * GreaseFork - https://greasyfork.org/en/scripts/11235-primewire-enhancer
 * OpenUserJS - https://openuserjs.org/scripts/nordinrahman/Primewire_Enhancer
+* Github     - https://github.com/nordinrahman/userscript/raw/master/primewire-enhancer.user.js  
+
+## nuget-to-fuget.user.js
+
+Add link to fuget.org from nuget.org page
+
+Script feature:
+* The description above is pretty much self explanatory :-)
+
+Install:
+* GreaseFork - TODO
+* OpenUserJS - TODO
+* Github     - https://github.com/nordinrahman/userscript/raw/master/nuget-to-fuget.user.js
